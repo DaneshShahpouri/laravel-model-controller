@@ -5,9 +5,11 @@
             CIAO.com
         </h1>
         <ul class="links d-flex text-white list-unstyled align-items-center m-0 p-0">
-            <li class="px-2"><a class="text-white" href="">link1</a></li>
-            <li class="px-2"><a class="text-white" href="">link2</a></li>
-            <li class="px-2"><a class="text-white" href="">link3</a></li>
+            @foreach ($data['route'] as $route)
+            <li class="px-2"><a class="text-white" href="{{$route == 'home' ? route('index') : route($route)}}">{{$route}}</a></li>
+                
+            @endforeach
+
         </ul>
     </div>
    </div>

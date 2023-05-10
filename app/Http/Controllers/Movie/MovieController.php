@@ -10,9 +10,24 @@ class MovieController extends Controller
 {
     public function index()
     {
+        $data = config('db');
+
+        return view('index', compact('data'));
+    }
+
+    public function movie()
+    {
+        $data = config('db');
+
         $movies = movie::all();
 
 
-        return view('index', compact('movies'));
+        return view('movie', compact('data', 'movies'));
+    }
+
+
+    public function extra()
+    {
+        return 'COSEextraCOSEextraCOSEextra';
     }
 }
